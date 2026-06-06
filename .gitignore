@@ -2,12 +2,14 @@
 *.user.*
 translations/*.qm
 build
+build_genesis
 version.js
 # IOS stuff below
 moc_*
 *.o
 *.mak
 *.build
+*.build_genesis
 *.xcodeproj
 nethxeum-wallet-gui_plugin_import.cpp
 nethxeum-wallet-gui_qml_plugin_import.cpp
@@ -34,5 +36,3 @@ Session.vim
 tags
 # Persistent undo
 [._]*.un~
-build_genesis/
-build_genesis/

@@ -1,6 +1,6 @@
 # nethxeum GUI Wallet Windows Installer #
 
-Copyright (c) 2017-2024, The nethxeum Project
+Copyright (c) 2017-2024, The monero Project
 
 ## Introduction ##
 

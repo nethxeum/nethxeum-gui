@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2024, The nethxeum Project
+// Copyright (c) 2014-2024, The monero Project
 // 
 // All rights reserved.
 // 

@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2024, The nethxeum Project
+// Copyright (c) 2014-2024, The monero Project
 // 
 // All rights reserved.
 // 
@@ -323,7 +323,7 @@ Rectangle {
                     .arg(qsTr("Address")) + translationManager.emptyString
                 placeholderText: {
                     if(persistentSettings.nettype == NetworkType.MAINNET){
-                        return "N.. / 7.. / nethxeum:.. / OpenAlias";
+                        return "N.. / 2.. / nethxeum:.. / OpenAlias";
                     } else if (persistentSettings.nettype == NetworkType.STAGENET){
                         return "5.. / 7.. / nethxeum:..";
                     } else if(persistentSettings.nettype == NetworkType.TESTNET){
