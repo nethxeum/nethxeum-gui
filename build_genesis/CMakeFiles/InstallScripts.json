@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"C:/nethxeum/build_genesis/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

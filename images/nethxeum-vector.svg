@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.1" viewBox="0 0 6000 6000" xml:space="preserve"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#07071a"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </radialGradient>
+    <linearGradient id="nGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="#00FFFF"/>
+      <stop offset="50%"  stop-color="#0066FF"/>
+      <stop offset="100%" stop-color="#CC00FF"/>
+    </linearGradient>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="60" result="b1"/>
+      <feGaussianBlur in="SourceGraphic" stdDeviation="25" result="b2"/>
+      <feMerge><feMergeNode in="b1"/><feMergeNode in="b2"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glowSoft" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="18" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="circleClip">
+      <circle cx="3000" cy="3000" r="2940"/>
+    </clipPath>
+  </defs>
+
+  <!-- Black circle background -->
+  <circle cx="3000" cy="3000" r="3000" fill="url(#bgGrad)"/>
+  <!-- Subtle ring -->
+  <circle cx="3000" cy="3000" r="2940" fill="none" stroke="#00ffff" stroke-width="8" opacity="0.15"/>
+
+  <g clip-path="url(#circleClip)">
+    <!-- N LETTER with neon glow -->
+    <g filter="url(#glow)">
+      <!-- Left bar -->
+      <polygon points="1620,1320 2160,1320 2160,4680 1620,4680" fill="url(#nGrad)"/>
+      <!-- Right bar -->
+      <polygon points="3840,1320 4380,1320 4380,4680 3840,4680" fill="url(#nGrad)"/>
+      <!-- Diagonal -->
+      <polygon points="2160,1320 2688,1320 4380,4680 3840,4680" fill="url(#nGrad)"/>
+    </g>
+
+    <!-- NFC SIGNAL ARCS -->
+    <g filter="url(#glowSoft)">
+      <path d="M 4710,2730 A 288,288 0 0 1 4710,3270" fill="none" stroke="#00FFFF" stroke-width="42" stroke-linecap="round" opacity="0.85"/>
+      <path d="M 4830,2547 A 528,528 0 0 1 4830,3453" fill="none" stroke="#00CCFF" stroke-width="33" stroke-linecap="round" opacity="0.67"/>
+      <path d="M 4950,2364 A 768,768 0 0 1 4950,3636" fill="none" stroke="#0099FF" stroke-width="25" stroke-linecap="round" opacity="0.49"/>
+    </g>
+
+    <!-- TOP-RIGHT NODE -->
+    <g filter="url(#glowSoft)">
+      <line x1="4320" y1="1512" x2="4944" y2="1440" stroke="#00FFFF" stroke-width="22" opacity="0.55" stroke-linecap="round"/>
+      <circle cx="5076" cy="1344" r="156" fill="none" stroke="#00FFFF" stroke-width="29" opacity="0.85"/>
+      <circle cx="5076" cy="1344" r="66" fill="#00FFFF" opacity="0.95"/>
+      <line x1="5076" y1="1344" x2="5400" y2="1056" stroke="#00FFFF" stroke-width="18" opacity="0.5" stroke-linecap="round"/>
+      <circle cx="5460" cy="996" r="66" fill="#00FFFF" opacity="0.8"/>
+      <line x1="5076" y1="1344" x2="5424" y2="1656" stroke="#CC00FF" stroke-width="17" opacity="0.45" stroke-linecap="round"/>
+      <circle cx="5484" cy="1716" r="54" fill="#CC00FF" opacity="0.75"/>
+    </g>
+
+    <!-- BOTTOM-LEFT NODE -->
+    <g filter="url(#glowSoft)">
+      <line x1="1728" y1="4632" x2="1200" y2="4680" stroke="#00FFFF" stroke-width="22" opacity="0.55" stroke-linecap="round"/>
+      <circle cx="1056" cy="4776" r="156" fill="none" stroke="#00FFFF" stroke-width="29" opacity="0.85"/>
+      <circle cx="1056" cy="4776" r="66" fill="#00FFFF" opacity="0.95"/>
+      <line x1="1056" y1="4776" x2="744" y2="4488" stroke="#00FFFF" stroke-width="18" opacity="0.5" stroke-linecap="round"/>
+      <circle cx="684" cy="4428" r="66" fill="#00FFFF" opacity="0.8"/>
+      <line x1="1056" y1="4776" x2="744" y2="5064" stroke="#CC00FF" stroke-width="17" opacity="0.45" stroke-linecap="round"/>
+      <circle cx="684" cy="5124" r="54" fill="#CC00FF" opacity="0.75"/>
+    </g>
+  </g>
+</svg>

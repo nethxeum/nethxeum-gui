@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Nethxeum GUI
+GenericName=Nethxeum-GUI
+Comment=Nethxeum GUI
+Exec=nethxeum-wallet-gui
+Type=Application
+Terminal=false
+Categories=Network;Qt;Finance;Office;
+Icon=org.getnethxeum.Nethxeum
+StartupNotify=true
