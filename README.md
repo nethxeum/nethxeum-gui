@@ -16,9 +16,8 @@ Copyright (c) 2026, Nethxeum
 
 - Github GUI: [https://github.com/nethxeum/nethxeum-gui](https://github.com/nethxeum/nethxeum-gui)
 - Github Daemon: [https://github.com/nethxeum/nethxeum](https://github.com/nethxeum/nethxeum)
-- Web: *coming soon*
-- Mail: *coming soon*
-- IRC: *coming soon*
+- Web: [https://nethxeum.com](https://nethxeum.com)
+- Mail: [contact@nethxeum.com](contact@nethxeum.com)
 
 ## Vulnerability response
 
