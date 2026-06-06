@@ -1,9 +1,0 @@
-C:/nethxeum/build_genesis/CMakeFiles/randomx.dir
-C:/nethxeum/build_genesis/CMakeFiles/crypto_helpers.dir
-C:/nethxeum/build_genesis/CMakeFiles/nethxeum_genesis.dir
-C:/nethxeum/build_genesis/CMakeFiles/edit_cache.dir
-C:/nethxeum/build_genesis/CMakeFiles/rebuild_cache.dir
-C:/nethxeum/build_genesis/CMakeFiles/list_install_components.dir
-C:/nethxeum/build_genesis/CMakeFiles/install.dir
-C:/nethxeum/build_genesis/CMakeFiles/install/local.dir
-C:/nethxeum/build_genesis/CMakeFiles/install/strip.dir
