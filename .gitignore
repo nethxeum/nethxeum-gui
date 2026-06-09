@@ -38,3 +38,4 @@ tags
 [._]*.un~
 build-ubuntu/
 build-ubuntu/
+pages/BlockExplorer.qml
