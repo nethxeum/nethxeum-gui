@@ -42,6 +42,7 @@ ColumnLayout {
     property alias miningView: stateView.miningView
     property alias signView: stateView.signView
     property alias prooveView: stateView.prooveView
+    property alias blockExplorerView: stateView.blockExplorerView
     property alias state: stateView.state
 
     NethxeumComponents.Navbar {
@@ -71,6 +72,11 @@ ColumnLayout {
             text: qsTr("Sign/verify") + translationManager.emptyString
             onSelected: state = "Sign"
         }
+        NethxeumComponents.NavbarItem {
+            active: state == "BlockExplorer"
+            text: qsTr("Block Explorer") + translationManager.emptyString
+            onSelected: state = "BlockExplorer"
+        }
     }
 
     Rectangle{
@@ -81,6 +87,7 @@ ColumnLayout {
         property TxKey prooveView: TxKey { }
         property SharedRingDB sharedRingDBView: SharedRingDB { }
         property Sign signView: Sign { }
+        property BlockExplorer blockExplorerView: BlockExplorer { }
         Layout.fillWidth: true
         Layout.preferredHeight: panelHeight
         color: "transparent"
@@ -114,10 +121,16 @@ ColumnLayout {
                 name: "SharedRingDB"
                 PropertyChanges { target: stateView; currentView: stateView.sharedRingDBView }
                 PropertyChanges { target: root; panelHeight: stateView.sharedRingDBView.panelHeight + 140 }
-            }, State {
+            },
+            State {
                 name: "Sign"
                 PropertyChanges { target: stateView; currentView: stateView.signView }
                 PropertyChanges { target: root; panelHeight: stateView.signView.signHeight + 140 }
+            },
+            State {
+                name: "BlockExplorer"
+                PropertyChanges { target: stateView; currentView: stateView.blockExplorerView }
+                PropertyChanges { target: root; panelHeight: 1600 }
             }
         ]
 

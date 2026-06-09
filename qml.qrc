@@ -103,6 +103,7 @@
         <file>pages/Receive.qml</file>
         <file>pages/TxKey.qml</file>
         <file>pages/SharedRingDB.qml</file>
+        <file>pages/BlockExplorer.qml</file>
         <file>components/effects/ImageMask.qml</file>
         <file>components/IconButton.qml</file>
         <file>components/PasswordDialog.qml</file>

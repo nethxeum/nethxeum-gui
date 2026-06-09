@@ -36,3 +36,5 @@ Session.vim
 tags
 # Persistent undo
 [._]*.un~
+build-ubuntu/
+build-ubuntu/

@@ -121,6 +121,22 @@ void Network::getJSON(const QString &url, const QJSValue &callback) const
     get(url, callback, "application/json; charset=utf-8");
 }
 
+void Network::rpc(const QString &url, const QString &body, const QJSValue &callback) const
+{
+    m_scheduler.run(
+        [this, url, body] {
+            std::shared_ptr<abstract_http_client> httpClient = newClient();
+            if (httpClient.get() == nullptr)
+            {
+                return QJSValueList({url, "", "failed to initialize a client"});
+            }
+            std::string response;
+            QString error = post(httpClient, url, body, response, "application/json; charset=utf-8");
+            return QJSValueList({url, QString::fromStdString(response), error});
+        },
+        callback);
+}
+
 std::string Network::get(const QString &url, const QString &contentType /* = {} */) const
 {
     std::string response;
@@ -156,6 +172,43 @@ QString Network::get(
         headers.push_back({"Content-Type", contentType.toStdString()});
     }
     const bool result = httpClient->invoke(uri.toStdString(), "GET", {}, timeout, std::addressof(pri), headers);
+    if (!result)
+    {
+        return "unknown error";
+    }
+    if (!pri)
+    {
+        return "internal error";
+    }
+    if (pri->m_response_code != 200)
+    {
+        return QString("response code %1").arg(pri->m_response_code);
+    }
+
+    response = std::move(pri->m_body);
+    return {};
+}
+
+QString Network::post(
+    std::shared_ptr<abstract_http_client> httpClient,
+    const QString &url,
+    const QString &body,
+    std::string &response,
+    const QString &contentType /* = {} */) const
+{
+    const QUrl urlParsed(url);
+    httpClient->set_server(urlParsed.host().toStdString(), urlParsed.scheme() == "https" ? "443" : "80", {});
+
+    const QString uri = (urlParsed.hasQuery() ? urlParsed.path() + "?" + urlParsed.query() : urlParsed.path());
+    const http_response_info *pri = NULL;
+    constexpr std::chrono::milliseconds timeout = std::chrono::seconds(30);
+
+    fields_list headers({{"User-Agent", randomUserAgent().toStdString()}});
+    if (!contentType.isEmpty())
+    {
+        headers.push_back({"Content-Type", contentType.toStdString()});
+    }
+    const bool result = httpClient->invoke(uri.toStdString(), "POST", body.toStdString(), timeout, std::addressof(pri), headers);
     if (!result)
     {
         return "unknown error";
